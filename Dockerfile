@@ -25,5 +25,8 @@ RUN ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.tar
 # Mount cgroups to avoid errors
 VOLUME [ "/sys/fs/cgroup" ]
 
+RUN mkdir -p /root/.local/bin
+VOLUME /root/.local/bin
+
 # Start systemd
 CMD ["/sbin/init"]
